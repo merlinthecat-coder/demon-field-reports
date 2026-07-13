@@ -91,14 +91,7 @@ await addDoc(collection(db, "notes"), {
         alert("❤️ Note sent!");
     };
 
-}; {
-
-    openComposer(
-        "💌 Leave Me A Note",
-        "Write anything that's on your heart."
-    );
-
-};
+}; 
 
 document.getElementById("missYouButton").onclick = function () {
 
