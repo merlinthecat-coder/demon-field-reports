@@ -78,10 +78,13 @@ document.getElementById("messageButton").onclick = function () {
 
         if (note === "") return;
 
-        await addDoc(collection(db, "notes"), {
+        console.log("Sending note...");
+
+await addDoc(collection(db, "notes"), {
             message: note,
             created: serverTimestamp()
         });
+        console.log("Saved!");
 
         popup.close();
 
