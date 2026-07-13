@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Demon Field Reports</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--green:#10B981;
+--purple:#7C3AED;
+--bg:#09090B;
+--card:#18181B;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:'Outfit',sans-serif;
+
+background:var(--bg);
+
+color:white;
+
+background:
+radial-gradient(circle at top,#7C3AED33 0%,transparent 45%),
+radial-gradient(circle at bottom,#10B98122 0%,transparent 45%),
+#09090B;
+
+}
+
+header{
+
+padding:40px 25px;
+
+text-align:center;
+
+}
+
+h1{
+
+font-size:42px;
+
+}
+
+.subtitle{
+
+margin-top:10px;
+
+color:#b8b8b8;
+
+}
+
+.container{
+
+width:95%;
+max-width:500px;
+margin:auto;
+
+}
+
+.category{
+
+background:rgba(255,255,255,.04);
+
+padding:20px;
+
+border-radius:22px;
+
+margin-bottom:25px;
+
+backdrop-filter:blur(18px);
+
+}
+
+.category h2{
+
+margin-bottom:15px;
+
+}
+
+button{
+
+width:100%;
+
+padding:18px;
+
+margin:8px 0;
+
+border:none;
+
+border-radius:16px;
+
+font-size:17px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+button:hover{
+
+transform:scale(1.02);
+
+}
+
+.green{
+
+background:var(--green);
+
+}
+
+.purple{
+
+background:var(--purple);
+
+}
+
+.shared{
+
+background:linear-gradient(135deg,var(--green),var(--purple));
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>😈 Demon Field Reports</h1>
+
+<div class="subtitle">
+
+What does your heart need today?
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="category">
+
+<h2>💚💜 Us</h2>
+
+<button class="shared" onclick="openNight()">
+
+🌙 Spend the Night
+
+</button>
+
+<div id="nightMenu" style="display:none;margin-top:15px;">
+
+<button class="shared">
+
+💤 Sleep Only
+
+</button>
+
+<button class="shared">
+
+❤️ Cuddles
+
+</button>
+
+<button class="shared">
+
+🎬 Movie First
+
+</button>
+
+<button class="shared">
+
+🍵 Coffee / Tea in the Morning
+
+</button>
+
+<button class="shared">
+
+🔥 Open to More
+
+</button>
+
+<button class="shared">
+
+🍳 Breakfast Together
+
+</button>
+
+<button class="shared">
+
+🌅 Wake Up Together
+
+</button>
+
+</div>
+
+<button class="shared">
+
+📅 Plan a Date
+
+</button>
+
+<button class="shared">
+
+💌 Miss You
+
+</button>
+
+</div>
+
+<div class="category">
+
+<h2>💚 Cortney</h2>
+
+<button class="green">
+
+🐈 Cat Update
+
+</button>
+
+<button class="green">
+
+💭 Shower Thought
+
+</button>
+
+<button class="green">
+
+🎨 Show Me Your Art
+
+</button>
+
+<button class="green">
+
+📸 Show Me What You're Looking At
+
+</button>
+
+<button class="green">
+
+📓 Field Report
+
+</button>
+
+</div>
+
+<div class="category">
+
+<h2>💜 Brett</h2>
+
+<button class="purple">
+
+🎸 Play Me Something
+
+</button>
+
+<button class="purple">
+
+🎶 Send Me A Song
+
+</button>
+
+<button class="purple">
+
+📸 Show Me What You're Looking At
+
+</button>
+
+<button class="purple">
+
+🪨 Field Report
+
+</button>
+
+<button class="purple">
+
+❤️ Miss You
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openNight(){
+
+let menu=document.getElementById("nightMenu");
+
+if(menu.style.display=="none"){
+
+menu.style.display="block";
+
+}else{
+
+menu.style.display="none";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
