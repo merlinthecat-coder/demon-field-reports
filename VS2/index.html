@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Demon Field Reports</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--green:#10B981;
+--purple:#7C3AED;
+--bg:#09090B;
+--card:#18181B;
+--text:#FAFAFA;
+--muted:#A1A1AA;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Outfit',sans-serif;
+
+background:
+radial-gradient(circle at top,#7C3AED44 0%,transparent 45%),
+radial-gradient(circle at bottom,#10B98133 0%,transparent 45%),
+var(--bg);
+
+color:var(--text);
+
+min-height:100vh;
+
+}
+
+.app{
+
+max-width:720px;
+
+margin:auto;
+
+padding:25px;
+
+}
+
+header{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+header h1{
+
+font-size:42px;
+
+margin-bottom:8px;
+
+}
+
+header p{
+
+color:var(--muted);
+
+font-size:18px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border-radius:24px;
+
+padding:22px;
+
+margin-bottom:24px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.card h2{
+
+margin-bottom:18px;
+
+}
+
+button{
+
+width:100%;
+
+padding:16px;
+
+margin-bottom:12px;
+
+border:none;
+
+border-radius:16px;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+color:white;
+
+transition:.2s;
+
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+}
+
+.shared{
+
+background:linear-gradient(135deg,var(--green),var(--purple));
+
+}
+
+.me{
+
+background:var(--green);
+
+}
+
+.brett{
+
+background:var(--purple);
+
+}
+
+.submenu{
+
+display:none;
+
+padding-left:15px;
+
+margin-bottom:10px;
+
+}
+
+dialog{
+
+border:none;
+
+border-radius:24px;
+
+padding:24px;
+
+width:min(90vw,500px);
+
+background:#1C1C21;
+
+color:white;
+
+}
+
+dialog::backdrop{
+
+background:rgba(0,0,0,.6);
+
+}
+
+textarea{
+
+width:100%;
+
+min-height:120px;
+
+margin-top:15px;
+
+padding:15px;
+
+border:none;
+
+border-radius:14px;
+
+background:#2C2C34;
+
+color:white;
+
+font-family:inherit;
+
+font-size:16px;
+
+}
+
+.sendRow{
+
+display:flex;
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.sendRow button{
+
+margin:0;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+
+<h1>😈 Demon Field Reports</h1>
+
+<p>What's in your heart today?</p>
+
+</header><section class="card">
+
+<h2>💚💜 Together</h2>
+
+<button id="nightButton" class="shared">
+🌙 Spend the Night
+</button>
+
+<div id="nightMenu" class="submenu">
+
+<button class="shared actionButton"
+data-title="💤 Sleep Only"
+data-message="I'd really like to just sleep next to you. ❤️">
+
+💤 Sleep Only
+
+</button>
+
+<button class="shared actionButton"
+data-title="❤️ Cuddles"
+data-message="I'd really love to cuddle with you.">
+
+❤️ Cuddles
+
+</button>
+
+<button class="shared actionButton"
+data-title="🎬 Movie First"
+data-message="Let's watch a movie first.">
+
+🎬 Movie First
+
+</button>
+
+<button class="shared actionButton"
+data-title="☕ Coffee / Tea"
+data-message="Coffee or tea together sounds perfect.">
+
+☕ Coffee / Tea
+
+</button>
+
+<button class="shared actionButton"
+data-title="🔥 Open To More"
+data-message="I'm open to seeing where the evening goes.">
+
+🔥 Open To More
+
+</button>
+
+<button class="shared actionButton"
+data-title="🍳 Breakfast Together"
+data-message="I'd love to wake up and have breakfast together.">
+
+🍳 Breakfast Together
+
+</button>
+
+</div>
+
+<button id="planDate" class="shared">
+📅 Plan a Date
+</button>
+
+<button id="missYou" class="shared">
+❤️ Miss You
+</button>
+
+<button id="surpriseMe" class="shared">
+🎲 Surprise Me
+</button>
+
+</section>
+
+<section class="card">
+
+<h2>📨 Send</h2>
+
+<button id="sendSong" class="me">
+🎵 Send Me A Song
+</button>
+
+<button id="sendArt" class="me">
+🎨 Show Me Your Art
+</button>
+
+<button id="fieldReport" class="me">
+📓 Field Report
+</button>
+
+<button id="workShenanigans" class="me">
+😂 Work Shenanigans
+</button>
+
+<button id="lookingAt" class="me">
+📸 Show Me What You're Looking At
+</button>
+
+<button id="catUpdate" class="me">
+🐈 Cat Update
+</button>
+
+<button id="showerThought" class="me">
+💭 Shower Thought
+</button>
+
+<button id="cakeCuddles" class="me">
+🍰 Cake & Cuddles
+</button>
+
+</section>
+
+<dialog id="popup">
+
+<h2 id="popupTitle"></h2>
+
+<p id="popupMessage"></p>
+
+<textarea
+id="popupText"
+placeholder="Write your message here..."
+></textarea>
+
+<div class="sendRow">
+
+<button id="sendMessage" class="shared">
+
+Send
+
+</button>
+
+<button id="closePopup" class="brett">
+
+Close
+
+</button>
+
+</div>
+
+</dialog>
+<script>
+
+const popup = document.getElementById("popup");
+const popupTitle = document.getElementById("popupTitle");
+const popupMessage = document.getElementById("popupMessage");
+const popupText = document.getElementById("popupText");
+
+document.getElementById("nightButton").onclick = () => {
+
+    const menu = document.getElementById("nightMenu");
+
+    menu.style.display =
+        menu.style.display === "block" ? "none" : "block";
+
+};
+
+document.querySelectorAll(".actionButton").forEach(button => {
+
+    button.onclick = () => {
+
+        popupTitle.textContent = button.dataset.title;
+        popupMessage.textContent = button.dataset.message;
+
+        popupText.style.display = "none";
+
+        popup.showModal();
+
+    };
+
+});
+
+function openTextbox(title,message){
+
+    popupTitle.textContent = title;
+    popupMessage.textContent = message;
+
+    popupText.value="";
+
+    popupText.style.display="block";
+
+    popup.showModal();
+
+}
+
+document.getElementById("planDate").onclick = () =>
+openTextbox("📅 Plan a Date","What are you thinking?");
+
+document.getElementById("surpriseMe").onclick = () =>
+openTextbox("🎲 Surprise Me","Tell them anything...");
+
+document.getElementById("sendSong").onclick = () =>
+openTextbox("🎵 Send Me A Song","Paste a Spotify, Apple Music, or YouTube link.");
+
+document.getElementById("fieldReport").onclick = () =>
+openTextbox("📓 Field Report","Write today's report.");
+
+document.getElementById("workShenanigans").onclick = () =>
+openTextbox("😂 Work Shenanigans","What happened at work?");
+
+document.getElementById("lookingAt").onclick = () =>
+openTextbox("📸 Show Me What You're Looking At","Describe it for now. Photo uploads are coming.");
+
+document.getElementById("catUpdate").onclick = () =>
+openTextbox("🐈 Cat Update","Tell them what your cat is doing.");
+
+document.getElementById("showerThought").onclick = () =>
+openTextbox("💭 Shower Thought","What's on your mind?");
+
+document.getElementById("sendArt").onclick = () =>
+openTextbox("🎨 Show Me Your Art","Describe it or paste a link for now.");
+
+document.getElementById("cakeCuddles").onclick = () =>
+openTextbox("🍰 Cake & Cuddles","Write your sweet message.");
+
+document.getElementById("missYou").onclick = () => {
+
+    popupTitle.textContent="❤️ Miss You";
+
+    popupMessage.textContent="❤️ Miss You ❤️";
+
+    popupText.style.display="none";
+
+    popup.showModal();
+
+};
+
+document.getElementById("closePopup").onclick = () => {
+
+    popup.close();
+
+};
+
+document.getElementById("sendMessage").onclick = () => {
+
+    alert(
+        "Eventually this will send through Firebase.\\n\\nFor now your message is:\\n\\n" +
+        popupText.value
+    );
+
+    popup.close();
+
+};
+
+</script>
+
+</body>
+</html>

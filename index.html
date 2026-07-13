@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Demon Field Reports</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Demon Field Reports</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -24,15 +27,21 @@
 
 <h1>😈 Demon Field Reports</h1>
 
-<p>
-What does your heart need today?
-</p>
+<p>What does your heart need today?</p>
 
 </header>
 
 <section class="card">
 
-<h2>💚💜 Us</h2>
+<h2>💚💜 Together</h2>
+
+<button id="messageButton" class="shared">
+💌 Leave Me A Note
+</button>
+
+<button id="missYouButton" class="shared">
+❤️ Miss You
+</button>
 
 <button id="nightButton" class="shared">
 🌙 Spend the Night
@@ -40,76 +49,67 @@ What does your heart need today?
 
 <div id="nightMenu" class="submenu">
 
-<button class="shared">
-💤 Sleep Only
+<button class="shared nightOption">
+💛 Sleep Only
 </button>
 
-<button class="shared">
+<button class="shared nightOption">
 ❤️ Cuddles
 </button>
 
-<button class="shared">
+<button class="shared nightOption">
 🎬 Movie First
 </button>
 
-<button class="shared">
-🍵 Coffee / Tea in the Morning
+<button class="shared nightOption">
+☕ Coffee / Tea
 </button>
 
-<button class="shared">
-🔥 Open to More
+<button class="shared nightOption">
+🔥 Open To More
 </button>
 
-<button class="shared">
+<button class="shared nightOption">
 🍳 Breakfast Together
-</button>
-
-<button class="shared">
-🌅 Wake Up Together
 </button>
 
 </div>
 
-<button class="shared">
-📅 Plan a Date
+<button id="planDateButton" class="shared">
+📅 Plan A Date
 </button>
 
-<button class="shared">
-💌 Miss You
-</button>
-
-<button class="shared">
+<button id="surpriseButton" class="shared">
 🎲 Surprise Me
 </button>
 
 </section>
-
 <section class="card">
 
 <h2>💚 Cortney</h2>
 
-<button class="cortney">
-🐈 Cat Update
+<button id="cSong" class="cortney">
+🎵 Send Me A Song
 </button>
 
-<button class="cortney">
-💭 Shower Thought
-</button>
-
-<button class="cortney">
+<button id="cArt" class="cortney">
 🎨 Show Me Your Art
 </button>
 
-<button class="cortney">
-📸 Show Me What You're Looking At
-</button>
-
-<button class="cortney">
+<button id="cField" class="cortney">
 📓 Field Report
 </button>
 
-<button class="cortney">
-🍰 Cake & Cuddles
+<button id="cWork" class="cortney">
+😂 Work Shenanigans
+</button>
+
+<button id="cLook" class="cortney">
+📸 Show Me What You're Looking At
+</button>
+
+<button id="cThought" class="cortney">
+💭 Random Thoughts
 </button>
 
 </section>
@@ -118,37 +118,45 @@ What does your heart need today?
 
 <h2>💜 Brett</h2>
 
-<button class="brett">
-🎸 Play Me Something
+<button id="bSong" class="brett">
+🎵 Send Me A Song
 </button>
 
-<button class="brett">
-🎶 Send Me A Song
+<button id="bArt" class="brett">
+🎨 Show Me Your Art
 </button>
 
-<button class="brett">
+<button id="bField" class="brett">
+📓 Field Report
+</button>
+
+<button id="bWork" class="brett">
+😂 Work Shenanigans
+</button>
+
+<button id="bLook" class="brett">
 📸 Show Me What You're Looking At
 </button>
 
-<button class="brett">
-🪨 Field Report
+<button id="bThought" class="brett">
+💭 Random Thoughts
 </button>
 
-<button class="brett">
-❤️ Miss You
-</button>
+</section>
+<section class="card">
 
-<button class="brett">
-🔥 Demon Time
-</button>
+<h2>📨 Activity</h2>
 
-<button class="brett">
-💋 Make Out
-</button>
+<p style="opacity:.8;">
+Eventually this will show the latest notes, songs,
+field reports, and requests from each of you.
+</p>
 
-<button class="brett">
-☕ Coffee / Tea
-</button>
+<div id="activityFeed">
+
+<p>No activity yet.</p>
+
+</div>
 
 </section>
 
@@ -158,15 +166,28 @@ What does your heart need today?
 
 <p id="popupText"></p>
 
-<button id="closePopup">
+<textarea
+id="popupInput"
+rows="8"
+placeholder="Write here..."
+></textarea>
+
+<div class="popupButtons">
+
+<button id="sendButton" class="shared">
+📤 Send
+</button>
+
+<button id="closePopup" class="brett">
 Close
 </button>
 
-</dialog>
-
 </div>
 
-<script src="script.js"></script>
+</dialog>
+<script type="module" src="script.js"></script>
+
+</div>
 
 </body>
 
